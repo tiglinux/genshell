@@ -8,13 +8,12 @@ package genshell;
 
 /**
  *
- * @author mikael
+ * @author Mikael Hadler
+ * Data: 30/04/2014
  */
 public class FPrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FPrincipal
-     */
+   // Criação do frame principal
     public FPrincipal() {
         initComponents();
     }
@@ -36,7 +35,12 @@ public class FPrincipal extends javax.swing.JFrame {
         btGerar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnArquivo = new javax.swing.JMenu();
+        miNovo = new javax.swing.JMenuItem();
+        miSair = new javax.swing.JMenuItem();
         mnEditar = new javax.swing.JMenu();
+        mnAjuda = new javax.swing.JMenu();
+        miManual = new javax.swing.JMenuItem();
+        miSobre = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -49,10 +53,38 @@ public class FPrincipal extends javax.swing.JFrame {
         btGerar.setText("Gerar link");
 
         mnArquivo.setText("Arquivo");
+
+        miNovo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_MASK));
+        miNovo.setText("Novo");
+        mnArquivo.add(miNovo);
+
+        miSair.setText("Sair");
+        mnArquivo.add(miSair);
+
         jMenuBar1.add(mnArquivo);
 
         mnEditar.setText("Editar");
         jMenuBar1.add(mnEditar);
+
+        mnAjuda.setText("Ajuda");
+
+        miManual.setText("Manual");
+        miManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miManualActionPerformed(evt);
+            }
+        });
+        mnAjuda.add(miManual);
+
+        miSobre.setText("Sobre");
+        miSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSobreActionPerformed(evt);
+            }
+        });
+        mnAjuda.add(miSobre);
+
+        jMenuBar1.add(mnAjuda);
 
         setJMenuBar(jMenuBar1);
 
@@ -95,6 +127,14 @@ public class FPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void miManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miManualActionPerformed
+// Aqui entra a chamada do manual em pdf
+    }//GEN-LAST:event_miManualActionPerformed
+
+    private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
+// Aqui será incluso as informações do projeto
+    }//GEN-LAST:event_miSobreActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -136,6 +176,11 @@ public class FPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem miManual;
+    private javax.swing.JMenuItem miNovo;
+    private javax.swing.JMenuItem miSair;
+    private javax.swing.JMenuItem miSobre;
+    private javax.swing.JMenu mnAjuda;
     private javax.swing.JMenu mnArquivo;
     private javax.swing.JMenu mnEditar;
     private javax.swing.JTextField tfCaminho;
