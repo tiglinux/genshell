@@ -19,8 +19,8 @@ Gostaria de contruibuir?
 Padrões de criação gráfica:
 
 Menus: utilizar sigla mi+onomedomenu ex: mnArquivo
-Botões: btNomedobotao
-Campos de texto: tfNomedocampo
-Àrea de texto: taNomedaarea
+| Botões: btNomedobotao
+| Campos de texto: tfNomedocampo
+| Àrea de texto: taNomedaarea
 
 Todo código deve conter seus devídos comentários no código e no controle de versão para facilitar a leitura dos que iram desenvolver.
