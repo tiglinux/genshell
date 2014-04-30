@@ -6,6 +6,8 @@
 
 package genshell;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mikael Hadler
@@ -59,6 +61,11 @@ public class FPrincipal extends javax.swing.JFrame {
         mnArquivo.add(miNovo);
 
         miSair.setText("Sair");
+        miSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSairActionPerformed(evt);
+            }
+        });
         mnArquivo.add(miSair);
 
         jMenuBar1.add(mnArquivo);
@@ -134,6 +141,17 @@ public class FPrincipal extends javax.swing.JFrame {
     private void miSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSobreActionPerformed
 // Aqui será incluso as informações do projeto
     }//GEN-LAST:event_miSobreActionPerformed
+
+    private void miSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSairActionPerformed
+// Confirmar saida do programa
+        if(JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Sair?",0)==0){
+            
+        System.exit(0);
+        
+        }else{
+        
+        }
+    }//GEN-LAST:event_miSairActionPerformed
 
     /**
      * @param args the command line arguments
