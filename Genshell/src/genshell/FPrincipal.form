@@ -11,7 +11,7 @@
       <SubComponents>
         <Menu class="javax.swing.JMenu" name="mnArquivo">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Arquivo"/>
+            <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="miNovo">
@@ -19,12 +19,12 @@
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="Ctrl+O"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Novo"/>
+                <Property name="text" type="java.lang.String" value="Library"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="miSair">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sair"/>
+                <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miSairActionPerformed"/>
@@ -34,28 +34,28 @@
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnEditar">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Editar"/>
+            <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnAjuda">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Ajuda"/>
+            <Property name="text" type="java.lang.String" value="Help"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="miManual">
+            <MenuItem class="javax.swing.JMenuItem" name="miGuide">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Manual"/>
+                <Property name="text" type="java.lang.String" value="Guide"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miManualActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miGuideActionPerformed"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="miSobre">
+            <MenuItem class="javax.swing.JMenuItem" name="miAbout">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Sobre"/>
+                <Property name="text" type="java.lang.String" value="About"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miSobreActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAboutActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -129,21 +129,21 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Caminho do arquivo: "/>
+        <Property name="text" type="java.lang.String" value="Source path of the file"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfCaminho">
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Destino do link:"/>
+        <Property name="text" type="java.lang.String" value="Destination path file"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="tfDestino">
     </Component>
     <Component class="javax.swing.JButton" name="btGerar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Gerar link"/>
+        <Property name="text" type="java.lang.String" value="Generate"/>
       </Properties>
     </Component>
   </SubComponents>
