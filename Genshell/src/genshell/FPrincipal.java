@@ -18,6 +18,9 @@ public class FPrincipal extends javax.swing.JFrame {
    // Criação do frame principal
     public FPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(this);
+        
+       
         
     }
 
@@ -35,7 +38,7 @@ public class FPrincipal extends javax.swing.JFrame {
         tfCaminho = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         tfDestino = new javax.swing.JTextField();
-        btGerar = new javax.swing.JButton();
+        btGenerate = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnArquivo = new javax.swing.JMenu();
         miNovo = new javax.swing.JMenuItem();
@@ -51,9 +54,23 @@ public class FPrincipal extends javax.swing.JFrame {
 
         jLabel1.setText("Source path of the file");
 
+        tfCaminho.setText("Ex: /home/user");
+        tfCaminho.setToolTipText("Ex: /home/root");
+        tfCaminho.setEnabled(false);
+        tfCaminho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tfCaminhoMouseClicked(evt);
+            }
+        });
+
         jLabel2.setText("Destination path file");
 
-        btGerar.setText("Generate");
+        btGenerate.setText("Generate");
+        btGenerate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGenerateActionPerformed(evt);
+            }
+        });
 
         mnArquivo.setText("File");
 
@@ -101,6 +118,10 @@ public class FPrincipal extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(155, 155, 155)
+                .addComponent(btGenerate)
+                .addContainerGap(167, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tfCaminho)
@@ -111,15 +132,11 @@ public class FPrincipal extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(tfDestino))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(155, 155, 155)
-                .addComponent(btGerar)
-                .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(23, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tfCaminho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +145,7 @@ public class FPrincipal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tfDestino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btGerar)
+                .addComponent(btGenerate)
                 .addContainerGap())
         );
 
@@ -141,11 +158,12 @@ public class FPrincipal extends javax.swing.JFrame {
 
     private void miAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAboutActionPerformed
 // Aqui será incluso as informações do projeto
+        JOptionPane.showMessageDialog(rootPane,"About the project GenShell\n www.genshell.blogspot.com");
     }//GEN-LAST:event_miAboutActionPerformed
 
     private void miSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSairActionPerformed
 // Confirmar saida do programa
-        if(JOptionPane.showConfirmDialog(null, "Deseja realmente sair?", "Sair?",0)==0){
+        if(JOptionPane.showConfirmDialog(null, "You really to exit?", "Exit",0)==0){
             
         System.exit(0);
         
@@ -153,6 +171,19 @@ public class FPrincipal extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_miSairActionPerformed
+
+    private void btGenerateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGenerateActionPerformed
+// Gerar Script desejado e formatar campos
+        JOptionPane.showConfirmDialog(rootPane, "You confirmation locale?\n"+tfCaminho.getText(), "Confirmation Source File", 0);
+        tfCaminho.setText(""); 
+    }//GEN-LAST:event_btGenerateActionPerformed
+
+    private void tfCaminhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfCaminhoMouseClicked
+        tfCaminho.setEnabled(true);
+        tfCaminho.setText("");
+        
+
+    }//GEN-LAST:event_tfCaminhoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -190,7 +221,7 @@ public class FPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btGerar;
+    private javax.swing.JButton btGenerate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
